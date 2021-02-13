@@ -1,42 +1,138 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  makeStyles,
+  Button,
+  Link,
+} from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { Link as RouterLink } from "gatsby";
+import Drawer from './drawer';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const headersData = [
+  {
+    label: "SERMONS",
+    href: "#sermons",
+  },
+  {
+    label: "ANNOUNCEMENTS",
+    href: "#announcements",
+  },
+  {
+    label: "CALENDAR",
+    href: "#calendar",
+  },
+  {
+    label: "ABOUT US",
+    href: "#aboutus",
+  },
+];
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const useStyles = makeStyles(() => ({
+  header: {
+    //backgroundColor: "#fff",
+    background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))",
+    paddingRight: "50px",
+    paddingLeft: "50px",
+    "@media (max-width: 900px)": {
+      paddingLeft: 0,
+    },
+  },
+  logo: {
+    fontFamily: "Work Sans, sans-serif",
+    fontWeight: 600,
+    color: "#fff",
+    textAlign: "left",
+  },
+  menuButton: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 700,
+    size: "18px",
+    marginLeft: "38px",
+    color: "#fff",
+  },
+  toolbar: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  drawerContainer: {
+    padding: "20px 30px",
+  },
+  Link:{
+    textDecoration: "none",
+  },
+}));
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+export default function Header() {
+    const { header, logo, menuButton, toolbar } = useStyles();
 
-export default Header
+    const [state, setState] = useState({
+      mobileView: false,
+      drawerOpen: false,
+    });
+
+    const { mobileView } = state;
+
+    useEffect(() => {
+      const setResponsiveness = () => {
+        return window.innerWidth < 900
+          ? setState((prevState) => ({ ...prevState, mobileView: true }))
+          : setState((prevState) => ({ ...prevState, mobileView: false }));
+      };
+
+      setResponsiveness();
+
+      window.addEventListener("resize", () => setResponsiveness());
+    }, []);
+
+    const displayDesktop = () => {
+      return (
+        <Toolbar className={toolbar}>
+          {EandRLogo}
+          <div>{getMenuButtons()}</div>
+        </Toolbar>
+      );
+    };
+
+    const displayMobile = () => { 
+      return (
+        <Drawer/>
+      );
+    };
+    
+   
+    const EandRLogo = (
+      <Link style={{ textDecoration: 'none' }} href='/'><Typography variant="h4" className={logo}>True Life Christian Ministries</Typography></Link>
+      
+    );
+    
+
+    const getMenuButtons = () => {
+      return headersData.map(({ label, href }) => {
+        return (
+          <Button
+            {...{
+              key: label,
+              color: "inherit",
+              to: href,
+              component: RouterLink,
+              className: menuButton,
+            }}
+          >
+            {label}
+          </Button>
+        );
+      });
+    };
+
+    return(
+      <header>
+        <AppBar className={header}>
+          {mobileView ? displayMobile() : displayDesktop()}
+        </AppBar>
+      </header> 
+    );
+  }
+
+

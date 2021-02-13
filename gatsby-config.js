@@ -26,6 +26,47 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-theme-material-ui`,
     {
+      resolve: 'gatsby-source-firestore',
+      options: {
+        credential: require("./firebase-creds.json"),
+        types: [
+          {
+            type: 'Annoucement',
+            collection: 'AnnouncementBook',
+            map: doc => ({
+              title: doc.title,
+              maker: doc.maker,
+              details: doc.details,
+              target: doc.target,
+              date: doc.dateTime,
+            }),
+          },
+          {
+            type:'Events',
+            collection:'EventsDatabase',
+            map: doc => ({
+              date: doc.date,
+              description: doc.description,
+              end: doc.endingTime,
+              start: doc.startingTime,
+              name: doc.name,
+            }),
+          },
+          {
+            type:'Sermon',
+            collection:'Sermons',
+            map: doc => ({
+              image: doc.image,
+              src: doc.link,
+              speaker: doc.speaker,
+              time: doc.time,
+              title: doc.title,
+            }),
+          }
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
