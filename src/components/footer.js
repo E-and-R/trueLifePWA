@@ -3,8 +3,9 @@ import {Grid, Typography, Divider, makeStyles, List, ListItem, ListItemText, Lis
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import PhoneIcon from '@material-ui/icons/Phone';
 import {useStaticQuery,graphql} from 'gatsby';
-
+import Map from './map';
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
@@ -35,13 +36,15 @@ export default function Footer(){
         `)
 
     return(
-            <Grid container spacing={2} style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
+        <div style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
+            <Grid container spacing={2} >
                 <Grid item xs='12' md='12'style={{textAlign: 'center'}} >
                     <Typography variant='h3' style={{color:'white'}}><strong>Never Miss A Thing</strong></Typography>
-                    <Typography variant='body1' style={{color:'white'}}>Follow us on social media</Typography>
+                    
                 </Grid>
                 
-                <Grid item xs='6' md='2'style={{textAlign: 'center', margin:'0 auto'}} >
+                <Grid item xs='7' md='2'style={{textAlign: 'center', margin:'0 auto'}} >
+                    <Typography variant='body1' style={{color:'white'}}>Follow us on social media</Typography>
                     <List className={classes.flexList}>
                         <ListItem Button component="a" href="https://www.facebook.com/Einstein-and-Robin-102521721846393" target="_blank">
                             <ListItemIcon>
@@ -63,8 +66,29 @@ export default function Footer(){
                         </ListItem>
                     </List>
                 </Grid>
-
+                <Grid item xs='9' md='2'style={{textAlign: 'center', margin:'0 auto'}} >
+                    <Typography variant='body1' style={{color:'white'}}>Get In Touch</Typography>
+                    <List className={classes.flexList}>
+                        <ListItem >
+                            <ListItemIcon>
+                                <PhoneIcon/>
+                                </ListItemIcon>
+                            <ListItemText primary="+27 00000000000" style={{color:'black'}}/>
+                        </ListItem>
+                        <ListItem >
+                            <ListItemIcon>
+                                <PhoneIcon/>
+                                </ListItemIcon>
+                            <ListItemText primary="+27 00000000001" style={{color:'black'}}/>
+                        </ListItem>
+                    </List>
+                </Grid>
+                <Grid item xs='12' md='5' style={{textAlign: 'center', margin:'0 auto'}}>
+                    <Typography variant='body1' style={{color:'white'}}>Come Worship With Us</Typography>
+                    <Map/>
+                </Grid>
             </Grid>
+        </div>
     )
 }
 

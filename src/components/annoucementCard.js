@@ -22,10 +22,10 @@ export default function AnnouncementCard(props){
     return(
         <Card className={classes.root} variant='outlined'> 
             <CardContent>
-                <Typography variant="h2" color="textSecondary">{props.title}</Typography>
-                <Typography variant="body1" >Announcer: {props.announcer}</Typography>
-                <Typography variant="body1">Target Audience: {props.target}</Typography>
-                <Typography variant="body1">Date: {props.date}</Typography>
+                <Typography variant="h2" >{props.title}</Typography>
+                <Typography variant="body1" color="textSecondary">Announcer: {props.announcer}</Typography>
+                <Typography variant="body1" color="textSecondary">Target Audience: {props.target}</Typography>
+                <Typography variant="body1" color="textSecondary">Date: {props.date}</Typography>
                 <Divider variant="middle" />
                 <Typography variant="body2" component="p">{props.message}</Typography>
             </CardContent>

@@ -1,11 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
 import AnnouncementCard from './annoucementCard';
-import {  Hidden,Typography } from '@material-ui/core';
+import {  Hidden,Typography, GridList, GridListTile, GridListTileBar, Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-around',
       overflow: 'hidden',
       backgroundColor: theme.palette.background.paper,
-      margin: 5,
+      marginBottom: 20,
       
     },
     gridList: {
@@ -50,18 +46,21 @@ export default function Announcements(){
 
     return(
       <div id='announcements' style={{background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))"}}>
-        <Hidden smUp><Typography variant='h4'  style={{textAlign:'center',color:'white', padding:'40px 0'}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
-        <Hidden xsDown><Typography variant='h1'   style={{textAlign:'center', color:'white'}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
-        <div className={classes.root}>
-            <GridList className={classes.gridList} cols={0} cellHeight={'auto'} >
-                {data.allAnnoucement.edges.map(({node, index})=>(
-                    <GridListTile key={node.title}>
-                         <AnnouncementCard  title={node.title} date={node.date} message={node.details} announcer={node.maker} target={node.target}/>
-                    </GridListTile>
-                ))}
-            </GridList>
-           
-        </div>
+        <Grid container spacing={2} style={{textAlign: 'center', justifyContent: 'center' ,display:'flex'}}>
+            <Grid item xs='12' md='11'>
+              <Hidden smUp><Typography variant='h4'  style={{textAlign:'center',color:'white', padding:'40px 0'}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
+              <Hidden xsDown><Typography variant='h1'   style={{textAlign:'center', color:'white'}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
+              <div className={classes.root}>
+                  <GridList className={classes.gridList} cols={0} cellHeight={'auto'} >
+                      {data.allAnnoucement.edges.map(({node, index})=>(
+                          <GridListTile key={node.title}>
+                              <AnnouncementCard  title={node.title} date={node.date} message={node.details} announcer={node.maker} target={node.target}/>
+                          </GridListTile>
+                      ))}
+                  </GridList>
+              </div>
+              </Grid>
+        </Grid>
       </div>
         
     )

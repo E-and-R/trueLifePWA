@@ -7,13 +7,15 @@ import AboutUs from '../components/aboutus';
 import Footer from '../components/footer';
 import Header from '../components/header'
 import LandingBanner from '../components/landingBanner';
+import Player from '../components/player';
 
+console.log(process.env.GATSBY_GOOGLE_API_KEY)
 const IndexPage = () => (
-  <div>
+  <div style={{maxWidth:'100%', overflowX:'hidden'}}>
     <SEO title="Home" />
     <Header/>
     <LandingBanner/>
-    <SermonPlayer/>
+    <Player/>
     <Annoucement/>
     <Calendar/>
     <AboutUs/>
