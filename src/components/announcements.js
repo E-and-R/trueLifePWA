@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'nowrap',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
-        background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))",
+        background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))",
     },
     text:{
       background: 'linear-gradient(to top, rgba(255,255,255), rgba(0,0,0))',
@@ -46,11 +46,11 @@ export default function Announcements(){
 
 
     return(
-      <div id='announcements' style={{background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))"}}>
+      <div id='announcements' style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
         <Grid container spacing={2} style={{textAlign: 'center', justifyContent: 'center' ,display:'flex'}}>
             <Grid item xs='12' md='11'>
               <Hidden smUp><Typography variant='h4'  style={{textAlign:'center',color:'white', padding:'40px 0'}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
-              <Hidden xsDown><Typography variant='h1'   style={{textAlign:'center', color:'white'}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
+              <Hidden xsDown><Typography variant='h1'   style={{textAlign:'center', color:'white', marginTop:60}}><strong>ANNOUNCEMENTS</strong></Typography></Hidden>
               <div className={classes.root}>
                   <GridList className={classes.gridList} cols={0} cellHeight={'auto'} >
                       {data.allAnnoucement.edges.map(({node, index})=>(

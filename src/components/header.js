@@ -13,19 +13,19 @@ import Drawer from './drawer';
 const headersData = [
   {
     label: "SERMONS",
-    href: "#sermons",
+    href: "/sermonsPage",
   },
   {
     label: "ANNOUNCEMENTS",
-    href: "#announcements",
+    href: "/announcementsPage",
   },
   {
     label: "CALENDAR",
-    href: "#calendar",
+    href: "/calendarPage",
   },
   {
     label: "ABOUT US",
-    href: "#aboutus",
+    href: "/aboutPage",
   },
 ];
 

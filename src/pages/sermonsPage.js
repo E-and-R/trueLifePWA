@@ -2,16 +2,15 @@ import React from "react"
 import SEO from "../components/seo"
 import Footer from '../components/footer';
 import Header from '../components/header'
-import LandingBanner from '../components/landingBanner';
+import Player from '../components/player';
 
-const IndexPage = () => (
+const SermonsPage = () => (
   <div style={{maxWidth:'100%', overflowX:'hidden'}}>
-    <SEO title="Home" />
+    <SEO title="Sermons" />
     <Header/>
-    <LandingBanner/>
-    
+    <Player/>
     <Footer/>
   </div>
 )
 
-export default IndexPage
+export default SermonsPage

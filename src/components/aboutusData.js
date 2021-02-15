@@ -1,4 +1,4 @@
-import albert from '../images/albert.jpg'
+import albert from '../images/albert.webp'
 
 const AboutUsData = [
        {

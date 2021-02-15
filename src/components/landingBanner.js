@@ -1,10 +1,8 @@
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
-import BackgroundSlider from 'react-background-slider';
-import Church from '../images/church.jpg';
-import Crowd from '../images/crowd.jpg';
-import Jesus from '../images/jesus.jpg';
+import { graphql, useStaticQuery } from "gatsby"
 import BannerContent from './bannerContent';
+import BackgroundSlider from 'gatsby-image-background-slider';
 
 const useStyles = makeStyles({
     banner: {
@@ -29,6 +27,7 @@ const useStyles = makeStyles({
 
 export default function LandingBanner(){
     const classes = useStyles();
+    
    
     return(
             <div className={classes.banner} > 
@@ -36,11 +35,27 @@ export default function LandingBanner(){
                     <BannerContent />
                 </div>
                 <BackgroundSlider 
-                    images={[Crowd,Jesus,Church]}
-                    duration={10}
-                    transition={2}
-                    
-                />
+                    query={useStaticQuery(graphql`
+                        query {
+                        backgrounds: allFile (filter: {sourceInstanceName: {eq: "images"}}){
+                            nodes {
+                            relativePath
+                            childImageSharp {
+                                fluid (maxWidth: 4000){
+                                ...GatsbyImageSharpFluid
+                                }
+                            }
+                            }
+                        }
+                        }
+                    `)}
+                    initDelay={2} // delay before the first transition (if left at 0, the first image will be skipped initially)
+                    transition={4} // transition duration between images
+                    duration={8} // how long an image is shown
+                    // specify images to include (and their order) according to `relativePath`
+                    images={["church.webp", "crowd.webp", "jesus.webp"]} 
+                    /> 
+                   
             </div>
     )
 

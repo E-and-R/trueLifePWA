@@ -29,10 +29,11 @@ export default function AboutUs(){
     const classes = useStyles();
     return(
         <div style={{maxWidth:'100%', overflowX:'hidden'}}>
-            <Grid container spacing={2} id='aboutus' style={{textAlign: 'center', justifyContent: 'center' ,display:'flex',background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))"}}>
+            
+            <Grid container spacing={2} id='aboutus' style={{textAlign: 'center', justifyContent: 'center' ,display:'flex',background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
                 <Grid item xs='12'>
                     <Hidden smUp><Typography variant='h4'  style={{color:'white', padding:'40px 0'}}><strong>ABOUT US</strong></Typography></Hidden>
-                    <Hidden xsDown><Typography variant='h1' style={{ color:'white'}}><strong>ABOUT US</strong></Typography></Hidden>
+                    <Hidden xsDown><Typography variant='h1' style={{ color:'white', marginTop:60}}><strong>ABOUT US</strong></Typography></Hidden>
                 </Grid>
                 <Grid  item xs='12' md='12' style={{textAlign: 'center', justifyContent: 'center',display:'flex'}}>
                     <Grid item xs='12' md='6' style={{textAlign: 'center', justifyContent: 'center'}}>

@@ -24,11 +24,11 @@ const Player = React.memo(() => {
   }, []);
 
   return (
-    <div id="sermons" style={{ background:"linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
+    <div id="sermons" style={{ background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
         <Grid container spacing={2} style={{textAlign: 'center', justifyContent: 'center' ,display:'flex'}}>
             <Grid item md='12'>
                 <Hidden smUp><Typography variant='h4'  style={{color:'white', padding:'40px 0'}}><strong>SERMONS</strong></Typography></Hidden>
-                <Hidden xsDown><Typography variant='h1' style={{ color:'white'}}><strong>SERMONS</strong></Typography></Hidden>
+                <Hidden xsDown><Typography variant='h1' style={{ color:'white', marginTop:60}}><strong>SERMONS</strong></Typography></Hidden>
             </Grid>
             <Grid item md='5' xs='11' style={{marginBottom:'20px'}}>
                 <Card >

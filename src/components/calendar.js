@@ -49,7 +49,7 @@ export default function Calendar()  {
                     <Grid item xs='11' md='11' style={{marginBottom:'20px'}}>
                     
                         <Hidden smUp><Typography variant='h4'  style={{textAlign:'center',color:'white', padding:'40px 0'}}><strong>CALENDAR</strong></Typography></Hidden>
-                        <Hidden xsDown><Typography variant='h1' style={{textAlign:'center', color:'white'}}><strong>CALENDAR</strong></Typography></Hidden>
+                        <Hidden xsDown><Typography variant='h1' style={{textAlign:'center', color:'white', marginTop:60}}><strong>CALENDAR</strong></Typography></Hidden>
                         <FullCalendar 
                             style={{}}
                             plugins={[ dayGridPlugin, interactionPlugin ]}

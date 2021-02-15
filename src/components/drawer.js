@@ -56,31 +56,31 @@ export default function SideMenu(){
           style={{background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))", height:'100%'}}
         >
             <List>
-                <ListItem button href='#'  component="a" >
+                <ListItem button href='/'  component="a" >
                     <ListItemIcon>
                         <HomeIcon color='white'/>
                     </ListItemIcon>
                     <ListItemText primary='Home'  />
                 </ListItem>
-                <ListItem button href='#sermons' component="a"  >
+                <ListItem button href='/sermonsPage' component="a"  >
                     <ListItemIcon>
                         <LibraryMusicIcon/>
                     </ListItemIcon>
                     <ListItemText primary='Sermons' />
                 </ListItem>
-                <ListItem button href='#announcements' component="a" >
+                <ListItem button href='/announcementsPage' component="a" >
                     <ListItemIcon>
                         <AnnouncementIcon/>
                     </ListItemIcon>
                     <ListItemText primary='Announcements' />
                 </ListItem>
-                <ListItem button href='#calendar' component="a" >
+                <ListItem button href='/calendarPage' component="a" >
                     <ListItemIcon>
                         <TodayIcon/>
                     </ListItemIcon>
                     <ListItemText primary='Calendar' />
                 </ListItem>
-                <ListItem button href='#aboutus' component="a" >
+                <ListItem button href='/aboutPage' component="a" >
                     <ListItemIcon>
                         <InfoIcon/>
                     </ListItemIcon>
