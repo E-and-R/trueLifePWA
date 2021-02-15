@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import AnnouncementCard from './annoucementCard';
-import {  Hidden,Typography, GridList, GridListTile, GridListTileBar, Grid, makeStyles } from '@material-ui/core';
+import {  Hidden,Typography, GridList, GridListTile, Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,6 +43,7 @@ export default function Announcements(){
       }
     }
   `)
+
 
     return(
       <div id='announcements' style={{background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))"}}>

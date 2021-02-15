@@ -4,10 +4,45 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"; // needed for eventClick
 import moment from 'moment';
 import { Hidden, Typography, Grid} from '@material-ui/core';
+import { graphql, useStaticQuery } from 'gatsby';
 
 export default function Calendar()  {
-    
+    const events =[];
+    const data = useStaticQuery(graphql`
+    {
+        allEvent {
+            edges {
+                node {
+                color
+                end
+                start
+                title
+                }
+            }
+        }
+        allWeeklyEvent {
+            edges {
+                node {
+                color
+                endTime
+                daysOfWeek
+                startTime
+                title
+                }
+            }
+        }
+    }
+  `);
+    data.allEvent.edges.map(({node, index})=>(
+        //console.log(node);
+        events.push(node)
 
+    ));
+    data.allWeeklyEvent.edges.map(({node, index})=>(
+        //console.log(node);
+        events.push(node)
+
+    ));
     return (
             <div id='calendar' style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}> 
                 <Grid container spacing={2} style={{textAlign: 'center', justifyContent: 'center' ,display:'flex'}}>
@@ -26,12 +61,8 @@ export default function Calendar()  {
                                 right:  'prev,next'
                             }}
                             height={700}
-                            events={[
-                                { title: 'Fasting prayer', start: '2021-02-11T12:30:00', end:'2021-02-17T14:30:00' },
-                                { title: 'Worship team practice', start: '2021-02-16T12:00:00', end:'2021-02-16T14:30:00',color:'white'},
-                                { title: 'Youth conference', start: '2021-02-16T16:30:00', end:'2021-02-16T22:45:00', color:'white'},
-                                { title: 'Sunday service', startTime: '10:00:00', endTime:'13:30:00', daysOfWeek:[0], color:'red'}
-                            ]}
+                           
+                            events={events}
                         />
                         
                         
@@ -52,3 +83,13 @@ function handleEventClick(info){
     alert(name+'\n'+start+'\n'+end);
 
 }
+
+
+/**
+ * events={[
+                                { title: 'Fasting prayer', start: '2021-02-11T12:30:00', end:'2021-02-17T14:30:00' },
+                                { title: 'Worship team practice', start: '2021-02-16T12:00:00', end:'2021-02-16T14:30:00',color:'white'},
+                                { title: 'Youth conference', start: '2021-02-16T16:30:00', end:'2021-02-16T22:45:00', color:'white'},
+                                { title: 'Sunday service', startTime: '10:00:00', endTime:'13:30:00', daysOfWeek:[0], color:'red'}
+                            ]}
+ */

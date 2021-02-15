@@ -1,10 +1,9 @@
 import React from "react"
-import {Grid, Typography, Divider, makeStyles, List, ListItem, ListItemText, ListItemIcon} from '@material-ui/core';
+import {Grid, Typography, Hidden, makeStyles, List, ListItem, ListItemText, ListItemIcon} from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import PhoneIcon from '@material-ui/icons/Phone';
-import {useStaticQuery,graphql} from 'gatsby';
 import Map from './map';
 const useStyles = makeStyles({
     root: {
@@ -23,24 +22,14 @@ const useStyles = makeStyles({
 
 export default function Footer(){
     const classes = useStyles();
-    const data = useStaticQuery(graphql`
-        query {
-            churchLogo: file(relativePath: { eq: "logo.pngg" }) {
-            childImageSharp {
-                fluid(maxWidth: 300) {
-                ...GatsbyImageSharpFluid
-                }
-            }
-            }
-        }
-        `)
 
     return(
         <div style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
             <Grid container spacing={2} >
                 <Grid item xs='12' md='12'style={{textAlign: 'center'}} >
-                    <Typography variant='h3' style={{color:'white'}}><strong>Never Miss A Thing</strong></Typography>
                     
+                    <Hidden smUp><Typography variant='h4'  style={{color:'white', padding:'40px 0'}}><strong>Never Miss A Thing</strong></Typography></Hidden>
+                    <Hidden xsDown><Typography variant='h1' style={{ color:'white'}}><strong>Never Miss A Thing</strong></Typography></Hidden>
                 </Grid>
                 
                 <Grid item xs='7' md='2'style={{textAlign: 'center', margin:'0 auto'}} >

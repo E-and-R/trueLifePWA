@@ -1,7 +1,6 @@
 import React from "react"
 import {Grid,GridList,GridListTileBar,GridListTile ,Hidden, Typography, makeStyles,List, ListItem, ListItemText,} from '@material-ui/core';
 import AboutUsData from './aboutusData';
-import Map from '../components/map';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,7 +36,7 @@ export default function AboutUs(){
                 </Grid>
                 <Grid  item xs='12' md='12' style={{textAlign: 'center', justifyContent: 'center',display:'flex'}}>
                     <Grid item xs='12' md='6' style={{textAlign: 'center', justifyContent: 'center'}}>
-                        <Typography variant='h4' >True Life Christian Ministries</Typography>
+                        <Typography variant='h4'style={{ color:'white'}} >True Life Christian Ministries</Typography>
                         <Typography variant='body2' color="textSecondary">EST 2001</Typography>
                         <Typography variant='body1' style={{marginLeft:'10px', marginRight:'10px'}}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -49,7 +48,7 @@ export default function AboutUs(){
                     </Grid>
                 </Grid>
                 <Grid item xs='12' md='3' style={{textAlign: 'center', justifyContent: 'center'}}>
-                    <Typography variant='h4' ><strong>Vision</strong></Typography>
+                    <Typography variant='h4'style={{ color:'white'}} ><strong>Vision</strong></Typography>
                     <List>
                         <ListItem>
                             <ListItemText>
@@ -74,7 +73,7 @@ export default function AboutUs(){
                     </List>
                 </Grid>
                 <Grid item xs='12' md='3' style={{textAlign: 'center', justifyContent: 'center'}}>
-                    <Typography variant='h4' ><strong>Mission</strong></Typography>
+                    <Typography variant='h4' style={{ color:'white'}} ><strong>Mission</strong></Typography>
                     <List>
                         <ListItem>
                             <ListItemText>
@@ -99,7 +98,7 @@ export default function AboutUs(){
                     </List>
                 </Grid>
                 <Grid item xs='12' md='3' style={{textAlign: 'center', justifyContent: 'center'}}>
-                    <Typography variant='h4' ><strong>Strategy</strong></Typography>
+                    <Typography variant='h4' style={{ color:'white'}} ><strong>Strategy</strong></Typography>
                     
                     <List>
                         <ListItem>
@@ -131,7 +130,7 @@ export default function AboutUs(){
                 </Grid>
                     
                 <Grid item xs='12'>
-                    <Typography variant='h4' ><strong>Meet Our Team</strong></Typography>
+                    <Typography variant='h4'style={{ color:'white'}} ><strong>Meet Our Team</strong></Typography>
                     <div className={classes.root}>
                         <GridList className={classes.gridList} cols={0}  >
                             {AboutUsData.map((tile) => (

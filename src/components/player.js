@@ -24,7 +24,7 @@ const Player = React.memo(() => {
   }, []);
 
   return (
-    <div style={{ background:"linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
+    <div id="sermons" style={{ background:"linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
         <Grid container spacing={2} style={{textAlign: 'center', justifyContent: 'center' ,display:'flex'}}>
             <Grid item md='12'>
                 <Hidden smUp><Typography variant='h4'  style={{color:'white', padding:'40px 0'}}><strong>SERMONS</strong></Typography></Hidden>

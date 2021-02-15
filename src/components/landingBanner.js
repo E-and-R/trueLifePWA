@@ -1,7 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography} from "@material-ui/core";
 import BackgroundSlider from 'react-background-slider';
 import Church from '../images/church.jpg';
 import Crowd from '../images/crowd.jpg';

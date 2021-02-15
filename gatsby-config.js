@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `True Life Christian Ministries`,
+    description: `Web Home of True Life Christian Minsitries Thabazimbi, Visit to hear an amazing word and be motivated`,
+    author: `@Einstein&Robin`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -62,20 +62,41 @@ module.exports = {
               time: doc.time,
               title: doc.title,
             }),
-          }
+          },
+          {
+            type:'Event',
+            collection:'Events',
+            map: doc => ({
+              color: doc.color,
+              start: doc.start,
+              end: doc.end,
+              title: doc.title,
+            }),
+          },
+          {
+            type:'WeeklyEvent',
+            collection:'RepeatingEvents',
+            map: doc => ({
+              color: doc.color,
+              daysOfWeek: doc.days,
+              startTime: doc.start,
+              endTime: doc.end,
+              title: doc.title,
+            }),
+          },
         ],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `True Life Christian Ministries`,
+        short_name: `True Life`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#00B1D2`,
+        theme_color: `#00B1D2`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

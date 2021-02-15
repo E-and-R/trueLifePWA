@@ -20,10 +20,12 @@ const useStyles = makeStyles(() => ({
     },
     list: {
         width: '100%',
+        color: 'white',
     },
     fullList: {
         width: '100%',
     },
+    
 }));
 
 export default function SideMenu(){
@@ -51,11 +53,12 @@ export default function SideMenu(){
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
+          style={{background: "linear-gradient(to right, rgba(44,95,45), rgba(0,177,210))", height:'100%'}}
         >
             <List>
                 <ListItem button href='#'  component="a" >
                     <ListItemIcon>
-                        <HomeIcon/>
+                        <HomeIcon color='white'/>
                     </ListItemIcon>
                     <ListItemText primary='Home'  />
                 </ListItem>

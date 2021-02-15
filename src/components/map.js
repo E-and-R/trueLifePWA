@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import { Typography, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
 const location={
     lat: -24.597444,

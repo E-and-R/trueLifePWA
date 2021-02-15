@@ -1,25 +1,8 @@
 import { Grid, Typography,Hidden } from '@material-ui/core';
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-    banner: {
-        
-        
-        
-        alignItems: 'center',
-        top:'50%',
-        right:'50%',
-        width: '100%',
-        height: 'auto',
-        background: '#000'
-        
-        
-    }
-});
 
 export default function Card(){
-    const classes = useStyles();
+    
     return(
         
         <div  >
