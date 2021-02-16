@@ -49,7 +49,7 @@ const Player = React.memo(() => {
                                 controls
                                 width={"100%"}
                                 height={"50px"}
-                                playing
+                                playing={false}
                             />
                         </CardActions>
                     </CardActionArea>

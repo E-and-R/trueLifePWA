@@ -24,12 +24,12 @@ export default function Footer(){
     const classes = useStyles();
 
     return(
-        <div style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))"}}>
+        <div style={{background: "linear-gradient(to right, rgba(0,177,210), rgba(44,95,45))",borderStyle:'solid', borderWidth:'5px',borderColor:'#fff'}}>
             <Grid container spacing={2} >
                 <Grid item xs='12' md='12'style={{textAlign: 'center'}} >
                     
                     <Hidden smUp><Typography variant='h4'  style={{color:'white', padding:'40px 0'}}><strong>Never Miss A Thing</strong></Typography></Hidden>
-                    <Hidden xsDown><Typography variant='h1' style={{ color:'white'}}><strong>Never Miss A Thing</strong></Typography></Hidden>
+                    <Hidden xsDown><Typography variant='h2' style={{ color:'white'}}><strong>Never Miss A Thing</strong></Typography></Hidden>
                 </Grid>
                 
                 <Grid item xs='7' md='2'style={{textAlign: 'center', margin:'0 auto'}} >
